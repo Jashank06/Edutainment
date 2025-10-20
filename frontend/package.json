@@ -1,5 +1,5 @@
 {
-  "homepage": "https://nandanikirtani.github.io/Edutainment",
+  "homepage": "https://jashank06.github.io/Edutainment",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist/",
+    "deploy": "gh-pages -d dist",
     "postinstall": "node node_modules/esbuild/install.js"
   },
   "dependencies": {

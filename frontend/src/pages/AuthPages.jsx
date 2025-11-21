@@ -185,9 +185,11 @@ export default function AuthPages() {
     try {
       const res = await loginUser({ email, password });
       const userData = res.data.user || res.user || res;
+      const token = res.data?.accessToken || res.accessToken;
 
-      localStorage.setItem("token", res.data?.accessToken || res.accessToken);
-      login(userData);
+      localStorage.setItem("token", token);
+      // Pass userData with accessToken included
+      login({ ...userData, accessToken: token });
 
       setMessage({ type: "success", text: "Logged in successfully!" });
       if (userData.role === "admin") navigate("/admin/dashboard");

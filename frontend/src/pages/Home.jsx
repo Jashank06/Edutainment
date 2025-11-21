@@ -29,14 +29,14 @@ const FloatingParticle = styled.div`
   position: absolute;
   width: ${props => props.size || 4}px;
   height: ${props => props.size || 4}px;
-  background: ${props => props.color || 'rgba(77, 179, 167, 0.6)'};
+  background: ${props => props.color || 'rgba(220, 38, 38, 0.6)'};
   border-radius: 50%;
   filter: blur(1px);
   animation: float ${props => props.duration || 20}s linear infinite;
   animation-delay: ${props => props.delay || 0}s;
   left: ${props => props.left || 0}%;
   bottom: 0;
-  box-shadow: 0 0 ${props => props.size * 2 || 8}px ${props => props.color || 'rgba(77, 179, 167, 0.4)'};
+  box-shadow: 0 0 ${props => props.size * 2 || 8}px ${props => props.color || 'rgba(220, 38, 38, 0.4)'};
   
   @keyframes float {
     0% {
@@ -161,10 +161,10 @@ const FeatureCard = styled(motion.div)`
   margin-bottom: 18px;
   align-items: center;
   padding: 20px 24px;
-  background: rgba(57, 112, 104, 0.08);
+  background: rgba(185, 28, 28, 0.08);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  border: 1px solid rgba(57, 112, 104, 0.2);
+  border: 1px solid rgba(185, 28, 28, 0.2);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -177,17 +177,17 @@ const FeatureCard = styled(motion.div)`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(57, 112, 104, 0.15) 0%, rgba(77, 179, 167, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(185, 28, 28, 0.15) 0%, rgba(220, 38, 38, 0.15) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
   }
   
   &:hover {
     transform: translateX(10px) scale(1.02);
-    background: rgba(57, 112, 104, 0.15);
-    border-color: rgba(77, 179, 167, 0.5);
-    box-shadow: 0 8px 32px rgba(57, 112, 104, 0.3),
-                0 0 0 1px rgba(77, 179, 167, 0.5);
+    background: rgba(185, 28, 28, 0.15);
+    border-color: rgba(220, 38, 38, 0.5);
+    box-shadow: 0 8px 32px rgba(185, 28, 28, 0.3),
+                0 0 0 1px rgba(220, 38, 38, 0.5);
   }
   
   &:hover::before {
@@ -208,7 +208,7 @@ const FeatureIcon = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  background: linear-gradient(135deg, rgba(57, 112, 104, 0.3) 0%, rgba(77, 179, 167, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(185, 28, 28, 0.3) 0%, rgba(220, 38, 38, 0.3) 100%);
   border-radius: 12px;
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -217,7 +217,7 @@ const FeatureIcon = styled.div`
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(135deg, #397068 0%, #4DB3A7 100%);
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
     border-radius: 12px;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -226,7 +226,7 @@ const FeatureIcon = styled.div`
   
   ${FeatureCard}:hover & {
     transform: rotate(12deg) scale(1.1);
-    box-shadow: 0 0 20px rgba(77, 179, 167, 0.6);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
   }
   
   ${FeatureCard}:hover &::before {
@@ -249,7 +249,7 @@ const FeatureTitle = styled.h3`
   transition: all 0.3s ease;
   
   ${FeatureCard}:hover & {
-    color: #4DB3A7;
+    color: #dc2626;
     transform: translateX(4px);
   }
   
@@ -266,21 +266,21 @@ const FeatureNumber = styled.div`
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(57, 112, 104, 0.4) 0%, rgba(77, 179, 167, 0.4) 100%);
-  border: 2px solid rgba(77, 179, 167, 0.3);
+  background: linear-gradient(135deg, rgba(185, 28, 28, 0.4) 0%, rgba(220, 38, 38, 0.4) 100%);
+  border: 2px solid rgba(220, 38, 38, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: 700;
-  color: #4DB3A7;
+  color: #dc2626;
   transition: all 0.4s ease;
   
   ${FeatureCard}:hover & {
-    background: linear-gradient(135deg, #397068 0%, #4DB3A7 100%);
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
     color: white;
     transform: translateY(-50%) scale(1.15) rotate(360deg);
-    box-shadow: 0 0 16px rgba(77, 179, 167, 0.8);
+    box-shadow: 0 0 16px rgba(220, 38, 38, 0.8);
   }
 `;
 
@@ -303,7 +303,7 @@ const VolumeButton = styled(motion.div)`
   transition: all 0.3s ease;
 
   &:hover {
-    background: #397068;
+    background: #b91c1c;
     border-color: rgba(255, 255, 255, 0.6);
     transform: scale(1.1);
   }
@@ -560,8 +560,8 @@ const DepartmentCard = styled(motion.div)`
   justify-content: center;
   
   &:hover {
-    border-color: #397068;
-    box-shadow: 0px 15px 40px rgba(24, 79, 81, 0.5);
+    border-color: #b91c1c;
+    box-shadow: 0px 15px 40px rgba(185, 28, 28, 0.5);
   }
 `;
 
@@ -768,9 +768,9 @@ const HeroVideo = () => {
       delay: Math.random() * 10,
       drift: (Math.random() - 0.5) * 100,
       color: i % 3 === 0 
-        ? 'rgba(77, 179, 167, 0.6)' 
+        ? 'rgba(220, 38, 38, 0.6)' 
         : i % 3 === 1 
-        ? 'rgba(57, 112, 104, 0.5)' 
+        ? 'rgba(185, 28, 28, 0.5)' 
         : 'rgba(255, 255, 255, 0.3)'
     }));
   }, []);
@@ -938,7 +938,7 @@ const CareerSection = () => {
             {/* Header */}
             <div
               style={{
-                background: "linear-gradient(135deg, #397068, #274E48)",
+                background: "linear-gradient(135deg, #b91c1c, #274E48)",
                 color: "white",
                 padding: "20px",
                 textAlign: "center",
@@ -1037,20 +1037,20 @@ const CareerSection = () => {
                   style={{
                     padding: "12px 28px",
                     borderRadius: "8px",
-                    border: "1px solid #397068",
+                    border: "1px solid #b91c1c",
                     background: "#000000",
                     color: "#FFFFFF",
                     fontSize: "15px",
                   }}
                   onMouseOver={(e) => {
                     e.target.style.background = "#1a1a1a";
-                    e.target.style.color = "#397068";
-                    e.target.style.borderColor = "#397068";
+                    e.target.style.color = "#b91c1c";
+                    e.target.style.borderColor = "#b91c1c";
                   }}
                   onMouseOut={(e) => {
                     e.target.style.background = "#000000";
-                    e.target.style.color = "#397068";
-                    e.target.style.borderColor = "#397068";
+                    e.target.style.color = "#b91c1c";
+                    e.target.style.borderColor = "#b91c1c";
                   }}
                 >
                   Cancel
@@ -1061,7 +1061,7 @@ const CareerSection = () => {
                     padding: "12px 28px",
                     borderRadius: "8px",
                     border: "none",
-                    background: "linear-gradient(135deg, #397068, #274E48)",
+                    background: "linear-gradient(135deg, #b91c1c, #274E48)",
                     color: "#FFFFFF",
                     fontSize: "15px",
                     fontWeight: "500",
@@ -1116,7 +1116,11 @@ const CoursesSection = () => {
 
         // If API returns empty array or no data, use fallback
         if (data.data && data.data.length > 0) {
-          setCourses(data.data);
+          // Sort by newest first so Trending shows latest courses
+          const sorted = [...data.data].sort(
+            (a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)
+          );
+          setCourses(sorted);
         } else {
           console.log("⚠️ API returned empty data, using fallback");
           setCourses(coursesData);
@@ -1166,7 +1170,7 @@ const CoursesSection = () => {
               scale: 1.08,
               rotateX: -5,
               rotateY: 5,
-              boxShadow: "0px 20px 40px rgba(39, 78, 72, 1)",
+              boxShadow: "0px 20px 40px rgba(185, 28, 28, 1)",
             }}
             onClick={() => handleCourseClick(course._id || course.id)}
             style={{ cursor: "pointer" }}
@@ -1237,7 +1241,7 @@ const ArtsSection = () => {
             whileHover={{
               scale: 1.05,
               y: -5,
-              boxShadow: "0px 15px 30px rgba(39, 78, 72, 1",
+              boxShadow: "0px 15px 30px rgba(185, 28, 28, 1)",
             }}
             onClick={() =>
               item.videoId && handlePlayVideo(item.videoId, item.title)
@@ -1363,8 +1367,8 @@ const DepartmentSection = () => {
               scale: 1.08,
               y: -8,
               rotateY: 5,
-              boxShadow: "0px 20px 40px #274E48",
-              borderColor: "#397068",
+              boxShadow: "0px 20px 40px rgba(185, 28, 28, 0.8)",
+              borderColor: "#b91c1c",
             }}
             transition={{
               type: "spring",
@@ -1521,8 +1525,8 @@ const ExtraSection = () => {
                   scale: 1.1, // Zoom
                   rotateX: -5, // 3D tilt
                   rotateY: 5,
-                  boxShadow: "0 0 25px 8px #274E48", // Glow
-                  border: "3px solid #397068",
+                  boxShadow: "0 0 25px 8px rgba(185, 28, 28, 0.8)", // Glow
+                  border: "3px solid #b91c1c",
                 }}
                 transition={{
                   type: "spring",

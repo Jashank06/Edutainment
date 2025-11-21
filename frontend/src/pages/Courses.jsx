@@ -28,8 +28,8 @@ const CourseCard = styled(motion.div)`
   justify-content: center;
 
   &:hover {
-    border-color: #4DB3A7;
-    box-shadow: 0px 15px 40px rgba(77, 179, 167, 0.5);
+    border-color: #dc2626;
+    box-shadow: 0px 15px 40px rgba(220, 38, 38, 0.5);
   }
 `;
 
@@ -176,7 +176,7 @@ function Courses() {
             placeholder="Search courses..."
             value={searchTerm}
             onChange={(e) => handleSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-[#4DB3A7] text-white rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-[#4DB3A7]"
+            className="w-full pl-10 pr-4 py-2 border border-[#dc2626] text-white rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-[#dc2626]"
           />
         </div>
       </div>
@@ -195,8 +195,8 @@ function Courses() {
                       onClick={() => setEngineeringOpen(!engineeringOpen)}
                       className={`cursor-pointer px-3 py-2 rounded-md transition flex justify-between items-center ${
                         selectedDept === dept
-                          ? "bg-[#4DB3A7]"
-                          : "hover:bg-[#4DB3A7] hover:text-black"
+                          ? "bg-[#dc2626]"
+                          : "hover:bg-[#dc2626] hover:text-black"
                       }`}
                     >
                       {dept}
@@ -226,8 +226,8 @@ function Courses() {
                               }}
                               className={`cursor-pointer px-3 py-1 rounded-md transition ${
                                 selectedSubDept === sub.key
-                                  ? "bg-[#4DB3A7] text-white"
-                                  : "hover:bg-[#4DB3A7] hover:text-black"
+                                  ? "bg-[#dc2626] text-white"
+                                  : "hover:bg-[#dc2626] hover:text-black"
                               }`}
                             >
                               {sub.name}
@@ -248,8 +248,8 @@ function Courses() {
                     }}
                     className={`cursor-pointer px-3 py-2 text-white rounded-md transition ${
                       selectedDept === dept
-                        ? "bg-[#4DB3A7] text-white"
-                        : "hover:bg-[#4DB3A7] hover:text-black"
+                        ? "bg-[#dc2626] text-white"
+                        : "hover:bg-[#dc2626] hover:text-black"
                     }`}
                   >
                     {dept}
@@ -267,11 +267,11 @@ function Courses() {
               filteredCourses.map((course, idx) => (
                 <CourseCard
                   key={course._id}
-                  whileHover={{
-                    scale: 1.05,
-                    y: -5,
-                    boxShadow: "0px 15px 40px rgba(77,179,167,0.5)",
-                  }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0px 15px 40px rgba(185, 28, 28, 0.8)",
+                }}
                   onClick={() => handleCourseClick(course._id)}
                 >
                   <CourseImage

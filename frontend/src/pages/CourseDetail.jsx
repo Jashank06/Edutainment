@@ -736,8 +736,59 @@ const CourseDetail = () => {
             {activeVideo ? (
               <div className="bg-gradient-to-br from-gray-900 via-red-950/20 to-gray-900 rounded-lg overflow-hidden shadow-2xl shadow-red-900/20 border border-red-900/30">
                 <div className="aspect-video bg-black relative group">
-                  {/* Video element (native controls hidden; custom controls below) */}
-                  <video
+                  {/* Check if video is YouTube embed */}
+                  {activeVideo.videoUrl?.includes('youtube.com/embed') || activeVideo.videoUrl?.includes('youtu.be') ? (
+                    // YouTube Embed
+                    <>
+                      <iframe
+                        src={canWatchThisVideo ? `${activeVideo.videoUrl}?modestbranding=1&rel=0&showinfo=0` : ''}
+                        className={`w-full h-full ${
+                          !canWatchThisVideo ? "blur-sm" : ""
+                        }`}
+                        title={activeVideo.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                      {!canWatchThisVideo && (
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/70 text-center p-6">
+                          <Lock className="w-10 h-10 text-gray-300 mb-3" />
+                          <p className="text-white font-semibold mb-2">
+                            Login and Enroll to watch this video
+                          </p>
+                          <p className="text-gray-300 text-sm mb-4">
+                            This is a locked lesson.{" "}
+                            {activeVideo?.isPreview
+                              ? "Preview is available"
+                              : "Preview only for selected videos"}
+                            .
+                          </p>
+                          <div className="flex gap-3">
+                            {!user && (
+                              <button
+                                onClick={() => navigate("/login")}
+                                className="px-4 py-2 rounded bg-red-600 hover:bg-red-700"
+                              >
+                                Login
+                              </button>
+                            )}
+                            {user && !isEnrolled && getUserRole() === "student" && (
+                              <button
+                                onClick={handleEnroll}
+                                className="px-4 py-2 rounded bg-yellow-500 hover:bg-yellow-600 text-black"
+                              >
+                                Enroll Now
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    // Regular video file
+                    <>
+                      {/* Video element (native controls hidden; custom controls below) */}
+                      <video
                     key={`${activeVideo?._id}-${
                       canWatchThisVideo ? "allowed" : "locked"
                     }`}
@@ -1015,6 +1066,8 @@ const CourseDetail = () => {
                       </button>
                     </div>
                   </div>
+                    </>
+                  )}
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold mb-2">{activeVideo.title}</h3>

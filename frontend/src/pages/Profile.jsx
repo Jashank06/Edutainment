@@ -148,7 +148,7 @@ export default function Profile() {
   if (loading) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#95F3EA]"></div>
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#dc2626]"></div>
       </div>
     );
   }
@@ -156,7 +156,7 @@ export default function Profile() {
   return (
     <div className="min-h-screen bg-black text-white" style={{backgroundColor: '#000000'}}>
       {/* Header */}
-      <div className="bg-gradient-to-r from-black via-[#95F3EA]/40 to-black border-b border-[#95F3EA]/50 shadow-lg shadow-[#95F3EA]/10">
+      <div className="bg-gradient-to-r from-black via-[#dc2626]/40 to-black border-b border-[#dc2626]/50 shadow-lg shadow-[#dc2626]/10">
         <div className="max-w-4xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -164,7 +164,7 @@ export default function Profile() {
                 onClick={() => navigate(-1)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#95F3EA] to-[#95F3EA] hover:from-[#95F3EA] hover:to-[#95F3EA] rounded-lg text-white font-medium transition-all duration-300 shadow-lg shadow-[#95F3EA]/30 hover:shadow-[#95F3EA]/50"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#dc2626] to-[#dc2626] hover:from-[#dc2626] hover:to-[#dc2626] rounded-lg text-white font-medium transition-all duration-300 shadow-lg shadow-[#dc2626]/30 hover:shadow-[#dc2626]/50"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back
@@ -198,16 +198,16 @@ export default function Profile() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-gradient-to-br from-black via-[#95F3EA]/20 to-gray-900 rounded-xl p-6 border border-[#95F3EA]/40 shadow-lg shadow-[#95F3EA]/10"
+              className="bg-gradient-to-br from-black via-[#dc2626]/20 to-gray-900 rounded-xl p-6 border border-[#dc2626]/40 shadow-lg shadow-[#dc2626]/10"
             >
-              <h3 className="text-xl font-bold text-[#95F3EA] mb-6 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-[#dc2626] mb-6 flex items-center gap-3">
                 <Camera className="w-6 h-6" />
                 Profile Picture
               </h3>
               
               <div className="flex flex-col items-center">
                 <div className="relative mb-6">
-                  <div className="w-32 h-32 rounded-full border-4 border-[#95F3EA] shadow-lg shadow-[#95F3EA]/30 overflow-hidden bg-gray-800">
+                  <div className="w-32 h-32 rounded-full border-4 border-[#dc2626] shadow-lg shadow-[#dc2626]/30 overflow-hidden bg-gray-800">
                     {profileData.avatar ? (
                       <img
                         src={profileData.avatar}
@@ -223,7 +223,7 @@ export default function Profile() {
                   
                   {uploadingAvatar && (
                     <div className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#95F3EA]"></div>
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#dc2626]"></div>
                     </div>
                   )}
                 </div>
@@ -284,9 +284,9 @@ export default function Profile() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-gradient-to-br from-black via-[#95F3EA]/20 to-gray-900 rounded-xl p-6 border border-[#95F3EA]/40 shadow-lg shadow-[#95F3EA]/10"
+              className="bg-gradient-to-br from-black via-[#dc2626]/20 to-gray-900 rounded-xl p-6 border border-[#dc2626]/40 shadow-lg shadow-[#dc2626]/10"
             >
-              <h3 className="text-xl font-bold text-[#95F3EA] mb-6 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-[#dc2626] mb-6 flex items-center gap-3">
                 <User className="w-6 h-6" />
                 Personal Information
               </h3>
@@ -301,7 +301,7 @@ export default function Profile() {
                     type="text"
                     value={profileData.fullName}
                     onChange={(e) => handleInputChange('fullName', e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#95F3EA] focus:border-transparent text-white"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#dc2626] focus:border-transparent text-white"
                     required
                   />
                 </div>
@@ -331,7 +331,7 @@ export default function Profile() {
                     type="tel"
                     value={profileData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#95F3EA] focus:border-transparent text-white"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#dc2626] focus:border-transparent text-white"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -346,7 +346,7 @@ export default function Profile() {
                     type="text"
                     value={profileData.rollNo}
                     onChange={(e) => handleInputChange('rollNo', e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#95F3EA] focus:border-transparent text-white"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#dc2626] focus:border-transparent text-white"
                     placeholder="Enter your roll number"
                   />
                 </div>
@@ -357,7 +357,7 @@ export default function Profile() {
                   disabled={updating}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-[#95F3EA] to-[#95F3EA] hover:from-[#95F3EA] hover:to-[#95F3EA] disabled:from-gray-600 disabled:to-gray-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-[#dc2626] to-[#dc2626] hover:from-[#dc2626] hover:to-[#dc2626] disabled:from-gray-600 disabled:to-gray-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   {updating ? (
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
